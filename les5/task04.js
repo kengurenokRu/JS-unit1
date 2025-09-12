@@ -1,3 +1,5 @@
+'use strict'
+
 const sum = (sumOrder, count, promo) => {
   let tempSumOrder = sumOrder;
   if (count > 10) {

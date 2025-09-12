@@ -1,3 +1,5 @@
+'use strict'
+
 const myStr = prompt('Введите вашу строку:');
 
 const result = (str) => {

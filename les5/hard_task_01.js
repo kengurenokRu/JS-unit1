@@ -1,3 +1,5 @@
+'use strict'
+
 const number1 = Number(prompt('Введите первое число:'));
 const number2 = Number(prompt('Введите второе число:'));
 
