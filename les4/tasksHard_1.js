@@ -1,3 +1,5 @@
+'use strict'
+
 const sum = Number(prompt('Введите сумму дохода:'));
 
 if (sum < 15000) { console.log(`Налог = ${sum * 0.13}`); }
