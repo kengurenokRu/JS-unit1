@@ -45,7 +45,5 @@ cart.add("Батарейки ААА", 2, 4);
 
 cart.print();
 
-
 cart.clear();
-cart.totalPrice = 5;
 cart.print();
