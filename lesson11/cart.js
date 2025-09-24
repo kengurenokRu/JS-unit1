@@ -1,0 +1,49 @@
+'use strict';
+
+const cart = {
+  items: [],
+  count: 0,
+
+  add(name, cost, count = 1) {
+    this.items.push({name, cost, count});
+    this.increaseCount(count);
+  },
+
+  increaseCount(count) {
+    this.count += count;
+  },
+
+  calculateItemPrice() {
+    return this.items.reduce((acc, item) => acc += item.count * item.cost, 0);
+  },
+
+  clear() {
+    this.items.length = 0;
+    this.count = 0;
+  },
+  print() {
+    console.log(JSON.stringify(this.items));
+    console.log(`Товаров в корзине: ${this.count} на сумму ${this.totalPrice}`);
+  },
+
+  get totalPrice() {
+    return this.calculateItemPrice();
+  },
+};
+
+Object.defineProperty(cart, 'totalProce', {
+
+});
+
+cart.add('Телевизор LG', 2315.6);
+cart.add('Кронштейн для телевизора', 235.4);
+cart.add('Батарейки АА', 2.35, 6);
+
+cart.print();
+
+cart.add('Батарейки ААА', 2, 4);
+
+cart.print();
+
+cart.clear();
+cart.print();
