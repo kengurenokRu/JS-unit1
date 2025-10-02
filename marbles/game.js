@@ -28,9 +28,8 @@
   };
 
   const checkEnd = (score) => {
-    console.log(score.player);
     if (score.player <= 0) {
-      alert('Вы приграли!');
+      alert('Вы проиграли!');
       return false;
     }
     else if (score.computer <= 0) {
@@ -58,7 +57,7 @@
     return function start() {
 
       if (move) {
-        let number = prompt('Введите ваше число');
+        let number = prompt(`Введите ваше число (у вас на данный момент ${score.player} шт.)`);
         if (number === null) {
           if (exitQuestion() === null) return null;
           else return start();
@@ -107,7 +106,14 @@
       if (checkEnd(score)) {
         return start();
       }
-      return 0;
+      const myChoice = confirm('Начать новую игру?');
+      if (myChoice) {
+        score.computer = 5;
+        score.player = 5;
+        move = rps();
+        return start();
+      }
+        else return 0;
     }
   };
   window.marbles = game;

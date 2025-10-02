@@ -45,7 +45,6 @@
 
   const game = () => {
     const figures = [figuresRus.name[0].charAt(0), figuresRus.name[1].charAt(0), figuresRus.name[2].charAt(0)];
-    console.log(figures);
     return function start() {
       const player = choice();
       const computer = getFigure();
