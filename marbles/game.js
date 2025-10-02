@@ -1,3 +1,5 @@
+'use strict';
+
 (() => {
 
   function getRandomIntInclusive(min, max) {
@@ -50,7 +52,8 @@
       player: 5,
       computer: 5,
     }
-    let move = true; //true - ходит игрок, false - ходит компьютер
+    const rps = window.rps();
+    let move = rps(); //true - ходит игрок, false - ходит компьютер
 
     return function start() {
 
